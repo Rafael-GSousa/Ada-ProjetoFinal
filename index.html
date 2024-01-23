@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Página de Login -->
+    <div id="loginModal" class="modal">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input
+          type="text"
+          id="username"
+          placeholder="Nome de usuário"
+          required
+        />
+        <input type="password" id="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+      </form>
+      <p>
+        Não tem uma conta?
+        <a
+          href="#"
+          onclick="openModal('signupModal'); closeModal('loginModal');"
+          >Cadastre-se</a
+        >
+      </p>
+    </div>
+
+    <!-- Página de Cadastro -->
+    <div id="signupModal" class="modal">
+      <h2>Cadastro</h2>
+      <form id="signupForm">
+        <input
+          type="text"
+          id="newUsername"
+          placeholder="Novo nome de usuário"
+          required
+        />
+        <input
+          type="password"
+          id="newPassword"
+          placeholder="Nova senha"
+          required
+        />
+        <button type="submit">Cadastrar</button>
+      </form>
+      <p>
+        Já tem uma conta?
+        <a
+          href="#"
+          onclick="openModal('loginModal'); closeModal('signupModal');"
+          >Faça login</a
+        >
+      </p>
+    </div>
+
+    <!-- Área do Usuário -->
+    <div id="userArea" class="modal">
+      <h2>Bem-vindo, <span id="userWelcome"></span></h2>
+      <button id="logoutBtn">Sair</button>
+      <form id="taskForm">
+        <input
+          type="text"
+          id="taskName"
+          placeholder="Nome da tarefa"
+          required
+        />
+        <input type="date" id="taskDeadline" required />
+        <textarea
+          id="taskDescription"
+          placeholder="Descrição da tarefa"
+          required
+        ></textarea>
+        <button type="submit">Adicionar Tarefa</button>
+      </form>
+      <div id="taskList"></div>
+    </div>
+
+    <!-- Formulário de Edição -->
+    <div id="editTaskModal" class="modal">
+      <h2>Editar Tarefa</h2>
+      <form id="editTaskForm">
+        <input type="text" id="editTaskName" required />
+        <input type="date" id="editTaskDeadline" required />
+        <textarea id="editTaskDescription" required></textarea>
+        <button type="submit">Salvar Edições</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
